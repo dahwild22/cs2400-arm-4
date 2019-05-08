@@ -17,7 +17,21 @@
 		;          in any word-aligned contiguous region of memory.
 
 		;		Your code here
+		
+		
+		
 
 example	DCD		0x0010070f
 numones FILL    4
 
+ADR		R0,example
+		LDR		R0,[R0]
+		MOV		R1,R0
+		SUB		R1,R1,#1
+		ANDS		R0,R0,R1
+		ADD		R2,R2,#1
+		MOV		R1,R0
+		BNE		count
+		ADR		R0,numones
+		STR		R2,[R0]
+		end
